@@ -35,7 +35,7 @@ module Spree
     end
 
     def can_capture?(payment)
-      payment.state == 'pending' || payment.state == 'checkout'
+      payment.state == 'credit'
     end
     
     def can_void?(payment)
