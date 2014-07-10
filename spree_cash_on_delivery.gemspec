@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_cash_on_delivery'
-  s.version     = '0.1.0'
+  s.version     = '0.1.1'
   s.summary     = 'Spree Cash On Delivery payment method for countries which provide goods and then collect cash'
   s.description = 'In countries like India, one of the popular payment model is to collect cash while delivering goods. This extension adds COD payment method to Spree'
   s.required_ruby_version = '>= 1.8.7'
