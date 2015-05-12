@@ -8,9 +8,8 @@ module Spree
     def post_create(payment)
       payment.order.adjustments.each { |a| a.destroy if a.label == I18n.t(:shipping_and_handling) }
       payment.order.adjustments.create(:amount => Spree::Config[:cash_on_delivery_charge],
-                               :source => payment,
-                               :originator => payment,
-                               :label => I18n.t(:shipping_and_handling))
+                                       :source => payment,
+                                       :label => I18n.t(:shipping_and_handling))
     end
     
     def update_adjustment(adjustment, src)
@@ -35,7 +34,7 @@ module Spree
     end
 
     def can_capture?(payment)
-      payment.state == 'credit'
+      payment.state == 'checkout'
     end
     
     def can_void?(payment)
