@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Spree::CashOnDelivery::PaymentMethod do
+describe Spree::PaymentMethod::CashOnDelivery do
   context "capture" do
     before(:each) do
       @order = Factory(:order_with_totals)

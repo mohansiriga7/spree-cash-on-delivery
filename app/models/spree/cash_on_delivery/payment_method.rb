@@ -1,5 +1,5 @@
 module Spree
-  class CashOnDelivery::PaymentMethod < Spree::PaymentMethod
+  class PaymentMethod::CashOnDelivery < Spree::PaymentMethod
 
     def payment_profiles_supported?
       true # we want to show the confirm step.
@@ -12,7 +12,7 @@ module Spree
                                :originator => payment,
                                :label => I18n.t(:shipping_and_handling))
     end
-    
+
     def update_adjustment(adjustment, src)
       adjustment.update_attribute_without_callbacks(:amount, Spree::Config[:cash_on_delivery_charge])
     end
@@ -37,7 +37,7 @@ module Spree
     def can_capture?(payment)
       payment.state == 'credit'
     end
-    
+
     def can_void?(payment)
       payment.state != 'void'
     end
@@ -49,11 +49,11 @@ module Spree
     #def provider_class
     #  self.class
     #end
-  
+
     def payment_source_class
       nil
     end
-  
+
     def method_type
       'cash_on_delivery'
     end
