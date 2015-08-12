@@ -1,5 +1,7 @@
 module Spree::CashOnDelivery
   class Engine < Rails::Engine
+    require 'spree/core'
+    isolate_namespace Spree
     engine_name 'spree_cash_on_delivery'
 
     config.autoload_paths += %W(#{config.root}/lib)
