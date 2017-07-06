@@ -9,7 +9,7 @@ module Spree
       payment.order.adjustments.each { |a| a.destroy if a.label == I18n.t(:shipping_and_handling) }
       payment.order.adjustments.create(:amount => Spree::Config[:cash_on_delivery_charge],
                                :source => payment,
-                               :originator => payment,
+                               #:originator => payment,
                                :label => I18n.t(:shipping_and_handling))
     end
 
