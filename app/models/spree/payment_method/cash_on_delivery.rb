@@ -1,15 +1,15 @@
 module Spree
-  class CashOnDelivery::PaymentMethod < Spree::PaymentMethod
+  class PaymentMethod::CashOnDelivery < PaymentMethod
 
     def payment_profiles_supported?
       true # we want to show the confirm step.
     end
 
     def post_create(payment)
-      payment.order.adjustments.each { |a| a.destroy if a.label == I18n.t(:shipping_and_handling) }
-      payment.order.adjustments.create(:amount => Spree::Config[:cash_on_delivery_charge],
-                                       :source => payment,
-                                       :label => I18n.t(:shipping_and_handling))
+      # payment.order.adjustments.each { |a| a.destroy if a.label == I18n.t(:shipping_and_handling) }
+      # payment.order.adjustments.create(:amount => Spree::Config[:cash_on_delivery_charge],
+      #                                  :source => payment,
+      #                                  :label => I18n.t(:shipping_and_handling))
     end
     
     def update_adjustment(adjustment, src)
