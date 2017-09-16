@@ -7,7 +7,7 @@ end
 if RUBY_VERSION < "1.9"
   gem "ruby-debug"
 else
-  gem "ruby-debug19"
+  gem "byebug"
 end
 
 gem 'active_reload'
