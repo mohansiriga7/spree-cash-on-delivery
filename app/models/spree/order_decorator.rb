@@ -27,5 +27,5 @@ Spree::Order.class_eval do
 
 end
 
-Spree::Order.state_machine.before_transition :to => :confirm,
-                                             :do => :cod_update_order
+#Spree::Order.state_machine.before_transition :to => :confirm,
+#                                             :do => :cod_update_order

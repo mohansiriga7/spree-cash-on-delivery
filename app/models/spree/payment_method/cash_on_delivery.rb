@@ -6,13 +6,13 @@ module Spree
     end
 
     def post_create(payment)
-      order = payment.order
-      order.adjustments.each { |a| a.destroy if a.label == I18n.t(:shipping_and_handling) }
-      order.adjustments.create(:amount => Spree::Config[:cash_on_delivery_charge],
-                                       :source => self,
-                                       :adjustable => payment.order,
-                                       :order => payment.order,
-                                       :label => I18n.t(:shipping_and_handling))
+      # order = payment.order
+      # order.adjustments.each { |a| a.destroy if a.label == I18n.t(:shipping_and_handling) }
+      # order.adjustments.create(:amount => Spree::Config[:cash_on_delivery_charge],
+      #                                  :source => self,
+      #                                  :adjustable => payment.order,
+      #                                  :order => payment.order,
+      #                                  :label => I18n.t(:shipping_and_handling))
 
       
     end
