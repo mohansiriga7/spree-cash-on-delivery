@@ -1,4 +1,4 @@
-class CreateSpreeCashOnDeliveryTransactions < ActiveRecord::Migration
+class CreateSpreeCashOnDeliveryTransactions < ActiveRecord::Migration[4.2]
   def change
     create_table :spree_cash_on_delivery_transactions do |t|
       t.string :state
